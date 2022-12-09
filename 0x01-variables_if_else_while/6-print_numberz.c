@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 /**
- * Decription: main - A program that prints all single digit numbers.
+ * Description: main - A program that prints all single digit.
+ * You are not allowed to use any variable of type char.
  * Return: 0
  */
 
 int main(void)
 {
-int num;
-while (num < 10)
+int num = 48;
+while (num <= 57)
 {
-putchar("%d", num);
+putchar(num);
 num += 1;
 }
-putchar("\n");
+printf("\n");
 return (0);
 }
