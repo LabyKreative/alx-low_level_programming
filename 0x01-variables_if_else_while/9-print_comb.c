@@ -8,15 +8,15 @@
 
 int main(void)
 {
-int num1 = 17;
-int num2 = 25;
-while (num1 <= 33)
+int num1 = 48;
+int num2 = 44;
+while (num1 <= 57)
 {
 putchar(num1);
-if (num1 != 33)
+if (num1 != 57)
 {
 putchar(num2);
-putchar(11);
+putchar(32);
 }
 num1 += 1;
 }
