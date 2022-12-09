@@ -2,6 +2,7 @@
 
 /**
  * Description: main - A program that prints all single digit.
+ * You can only use putchar function.
  * You are not allowed to use any variable of type char.
  * Return: 0
  */
