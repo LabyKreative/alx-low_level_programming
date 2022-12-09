@@ -14,6 +14,6 @@ while (num <= 57)
 putchar(num);
 num += 1;
 }
-putchar("\n");
+printf("\n");
 return (0);
 }
