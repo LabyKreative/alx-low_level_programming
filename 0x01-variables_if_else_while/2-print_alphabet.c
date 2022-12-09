@@ -9,11 +9,11 @@
 
 int main(void)
 {
-int 1 = "a";
-while (1 <= "z")
+int x = "a";
+while (x <= "z")
 {
-putchar(1);
-1 += 1;
+putchar(x);
+x += x;
 }
 putchar("\n");
 return (0);
