@@ -2,16 +2,18 @@
 
 /**
  * Description: main - A program that prints all single digit
- * You are not allowed to use any variable of type char
+ * typ char is not allowed, only putchar
  * Return: 0
  */
 
 int main(void)
 {
-	int num;
-
-	for (num = "0"; num <= "9"; num++)
-		putchar(num);
-	putchar("\n");
-	return (0);
+int num = 48;
+while (num <= 57)
+{
+putchar(num);
+num += 1;
+}
+printf("\n");
+return (0);
 }
