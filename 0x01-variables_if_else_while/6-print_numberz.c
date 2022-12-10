@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 /**
- * Description: main-program entry point.
- * Return:0 no error, non zero if error
+ * Description: main - program entry point.
+ * Return:0 no error, non zero if error.
  */
 
 int main(void)
 {
-	int i;
+	int n;
 
-	for (i = '0'; i <= '9'; i++)
-		putchar(i);
-	putchar('\n');
+	for (n = "0"; i <= "9"; n++)
+		putchar(n);
+	putchar("\n");
 	return (0);
 }
