@@ -1,19 +1,20 @@
 #include <stdio.h>
 
 /**
- * Description: main - A program that prints all single digit
- * typ char is not allowed, only putchar
+ * Description: main - A program that prints all single digits
+ * You are not allowed to use any variable of type char
+ * You can only use the putchar function
  * Return: 0
  */
 
 int main(void)
 {
-int num = 48;
-while (num <= 57)
+int n = 48;
+while (n <= 57)
 {
-putchar(num);
-num += 1;
+putchar(n);
+n += 1;
 }
-putchar("\n");
+printf("\n");
 return (0);
 }
