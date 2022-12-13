@@ -1,21 +1,19 @@
 #include "main.h"
 
 /**
- * Description: main - A program that prints _putchar, followed by a new line.
- * The program should return zero.
- * Return: 0.
+ * main - Print _putchar
+ * Return: Always 0
  */
-
 int main(void)
 {
-	int p = 0;
-	char str_ptc[8] = "_putchar";
-
-	while (p < 8)
-	{
-		_putchar(str_ptc[n]);
-		p += 1;
-	}
-	_putchar("\n");
+	putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 	return (0);
 }
