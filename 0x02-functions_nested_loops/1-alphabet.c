@@ -1,19 +1,15 @@
-#include <unistd.h>
-#include <main.h>
+#include "main.h"
 
 /**
- * print_alphabet - a function that prints the alphabet, in lowercase
- *
- * Return: Always 0 (Succes)
+ * print_alphabet - A function that prints the alpha bet in lowercase.
  */
 
 void print_alphabet(void)
 {
-	int n;
+	char lw;
 
-	for (n = 'a'; n <= 'z'; n++)
-	{
-		_putchar(n);
-	}
-	_putchar('\n');
+	for (lw = "a"; lw <= "z"; lw++)
+		_putchar(lw);
+
+	_putchar("\n");
 }
