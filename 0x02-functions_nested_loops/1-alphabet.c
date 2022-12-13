@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- * print_alphabet - A function that prints the alpha bet in lowercase.
+ * print_alphabet - prints the alphabet in lowercase, followed by a new line.
  */
-
 void print_alphabet(void)
 {
-	char lw;
+	char letter;
 
-	for (lw = "a"; lw <= "z"; lw++)
-		_putchar(lw);
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
 
-	_putchar("\n");
+	_putchar('\n');
 }

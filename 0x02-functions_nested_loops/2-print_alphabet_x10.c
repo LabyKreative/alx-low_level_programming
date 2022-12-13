@@ -6,15 +6,12 @@
  * Return: null.
  */
 
-void print_alphabet_x10(void)
+void print_alphabet(void)
 {
-	int t;
-	char lw;
+	char letter;
 
-	for (t = 0; t <= 9; t++)
-	{
-		for (lw = "a"; lw <= "z"; lw++)
-			_putchar(lw);
-		_putchar("\n");
-	}
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
+
+	_putchar('\n');
 }
