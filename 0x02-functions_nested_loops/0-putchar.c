@@ -8,14 +8,14 @@
 
 int main(void)
 {
-int x = 0;
-char str_putchar[9] = "_putchar";
+	char *sh = "putchar";
 
-while (x < 9)
-{
-_putchar(str_putchar[n];
-x += 1;
-}
-_putchar("\n");
-return (0);
+	while (*sh)
+	{
+		_putchar(*sh);
+		sh++;
+	}
+	_putchar('\n');
+
+	return (0);
 }
