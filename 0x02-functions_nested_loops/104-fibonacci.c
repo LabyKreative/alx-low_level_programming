@@ -19,6 +19,6 @@ int main(void)
 		n2 = n3;
 		n3 = n1 + n2;
 	}
-	putchar("\n");
+	printf("\n");
 	return (0);
 }
