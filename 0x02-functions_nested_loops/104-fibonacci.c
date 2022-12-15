@@ -1,21 +1,23 @@
 #include <stdio.h>
+
 /**
- * main - prints 98 fibonacci numbers starting with 1 or 2
- * Return: Always 0.
+ * main - prints 98 fibonacci terms
+ * Return: 0
  */
 int main(void)
 {
 	int i;
-	unsigned long add, f1 = 0, f2 = 1;
+	int n = 98;
+	int n1 = 1, n2 = 2;
+	int n3 = n1 + n2;
 
-	for (i = 0; i < 98; i++)
+	printf("%d, %d, ", n1, n2);
+	for (i = 3; i <= n; i++)
 	{
-		add = f1 + f2;
-		printf("%lu", add);
-		f1 = f2;
-		f2 = add;
-		if (i != 97)
-			printf(", ");
+		printf("%d, ", n3);
+		n1 = n2;
+		n2 = n3;
+		n3 = n1 + n2;
 	}
 	printf("\n");
 	return (0);
