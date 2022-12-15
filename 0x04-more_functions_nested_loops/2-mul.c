@@ -3,9 +3,9 @@
 /**
  * mul - multiplies two integers.
  *
- * @a: first char
+ * @a: first num
  *
- * @b: second char
+ * @b: second num
  *
  * Description: multiplies two integers.
  *
