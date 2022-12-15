@@ -6,7 +6,6 @@
  */
 int main(void)
 {
-	int i;
 	int n = 98;
 	int n1 = 1, n2 = 2;
 	int n3 = n1 + n2;
