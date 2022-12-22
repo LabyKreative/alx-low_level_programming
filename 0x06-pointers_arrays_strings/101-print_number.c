@@ -31,17 +31,17 @@ void print_number(int n)
 
 		int y;
 
-		int nu;
+		int d;
 
 		for (y = 0; y < num - x - 1; y++)
 		{
 			pow = pow * 10;
 		}
 
-		nu = ((n / pow) % 10);
+		d = ((n / pow) % 10);
 		if (n < 0)
 		{
-			nu = -nu;
+			d = -d;
 			if (x == 0)
 				_putchar(45);
 		}
