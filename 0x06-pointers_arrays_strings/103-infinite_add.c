@@ -20,7 +20,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (a > size_r || b > size_r)
 		return (0);
 	e = 0;
-	for (a -= 1, b -= 1, c = 0; c < size_r - 1; a--, b--, k++)
+	for (a -= 1, b -= 1, c = 0; c < size_r - 1; a--, b--, c++)
 	{
 		f = e;
 		if (a >= 0)
