@@ -1,30 +1,19 @@
-/*
- * file: 7-print_chessboard.c
- * Auth: LabyKreative (laby Owolabi)
- */
-
 #include "main.h"
 
 /**
  * print_chessboard - a function that prints the chessboard.
- * @a: array holding chessboard
+ * @a: prints chessboard.
  * Return: Always 0.
  */
-
 void print_chessboard(char (*a)[8])
 {
-	unsigned int x, y;
+	int ch1, ch2;
 
-	x = 0;
-	while (x < 8)
+	for (ch1 = 0; a[ch1][7]; ch1++)
 	{
-		y = 0;
-		while (y < 8)
-		{
-			_putchar(a[x][y]);
-			y++;
-		}
+		for (ch2 = 0; ch2 < 8; ch2++)
+			_putchar(a[ch1][ch2]);
+
 		_putchar('\n');
-		x++;
 	}
 }
