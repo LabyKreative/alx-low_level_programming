@@ -2,25 +2,25 @@
 
 /**
  * print_chessboard - function that prints a chessboard
- * @a: size of 2D array
- * Return: none
+ * @a: chessboard to print.
+ * Return: Always 0.
  */
 
 void print_chessboard(char (*a)[8])
 {
-	int i = 0;
-	int j;
+	int x = 0;
+	int y;
 
-	while (i < 8)
+	while (x < 8)
 	{
-		j = 0;
-		while (j < 8)
+		y = 0;
+		while (y < 8)
 		{
-			_putchar(a[i][j]);
-			if (j == 7)
+			_putchar(a[x][y]);
+			if (y == 7)
 				_putchar('\n');
-			j++;
+			y++;
 		}
-		i++;
+		x++;
 	}
 }
