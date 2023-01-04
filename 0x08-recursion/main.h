@@ -13,6 +13,6 @@ int getNumSqr(int num, int i);
 int getNumPrim(int num, int i);
 int is_palindrome(char *s);
 int get_pal(char *s, int len);
-
+int wildcmp(char *s1, char *s2);
 
 #endif
