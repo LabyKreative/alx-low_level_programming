@@ -2,10 +2,10 @@
 
 /**
  * print_chessboard - a function that prints the chessboard.
- * @a: the chess board array pointer
- *
- * Return: void
+ * @a: the chess board array pointer.
+ * Return: Always 0.
  */
+
 void print_chessboard(char (*a)[8])
 {
 	int x, y;
