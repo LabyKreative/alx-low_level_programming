@@ -27,9 +27,9 @@ int _sqrt_recursion(int n)
 /**
  * getNumSqr - a function that gets the
  * number of square root.
- * @num: input number
- * @i: Counter variable
- * Return: int
+ * @num: enter no.
+ * @i: variable
+ * Return: Always 0.
  */
 
 int getNumSqr(int num, int i)
@@ -43,7 +43,5 @@ int getNumSqr(int num, int i)
 		return (getNumSqr(num, i + 1));
 	}
 	else
-	{
 		return (-1);
-	}
 }
