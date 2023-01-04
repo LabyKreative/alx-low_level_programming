@@ -25,21 +25,22 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * getNumSqr - a function that get the number of sqrt.
- * @nu: enter no.
- * @x: no. variable.
- * Return: Always 0.
+ * getNumSqr - a function that gets the
+ * number of square root.
+ * @num: input number
+ * @i: Counter variable
+ * Return: int
  */
 
-int getNumSqr(int nu, int x)
+int getNumSqr(int num, int i)
 {
-	if (nu == (x * x))
+	if (num == (i * i))
 	{
-		return (x);
+		return (i);
 	}
-	else if (nu > (x * x))
+	else if (num > (i * i))
 	{
-		return (getNumSqr(nu, x + 1));
+		return (getNumSqr(num, i + 1));
 	}
 	else
 	{
