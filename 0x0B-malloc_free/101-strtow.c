@@ -1,102 +1,112 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
- * strtow - splits string into words
- * @str: string
- * Return: EXIT_SUCCESS.
+ * word_count - Count number of words separated by spaces in a string
+ * @str: String to check
+ *
+ * Return: Number of words;
+ */
+int word_count(char *str)
+{
+	int count;
+	int i;
+
+	i = count = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+		{
+			count++;
+			i++;
+		}
+		i++;
+	}
+	return (count);
+}
+
+/**
+ * find_words_len - Find length of all the words in a string
+ * @str: String to check length of words in
+ * @words: Number of words
+ *
+ * Return: Combined length of words
+ */
+int *find_words_len(char *str, int words)
+{
+	int i, word, len;
+	int *sizes;
+
+	sizes = malloc(words * sizeof(int));
+	if (sizes == NULL)
+		return (NULL);
+	i = word = 0;
+	while (word < words)
+	{
+		if (str[i] != ' ')
+		{
+			len = 0;
+			while (str[i] != ' ')
+			{
+				len++;
+				i++;
+			}
+			len++;
+			sizes[word] = len;
+			word++;
+		}
+		i++;
+	}
+	return (sizes);
+}
+
+/**
+ * strtow - Split a string into words
+ * @str: String to split
+ *
+ * Return: Return pointer to an array of strings, NULL if it fails
  */
 char **strtow(char *str)
 {
-	char **s;
+	char **nstr;
+	int words, i, j, k, cur_words, *sizes;
 
-	int words, x = 0, filler = 0;
-
-	if (str == NULL || *str == 0)
+	if (str == NULL || *str == '\0')
 		return (NULL);
-	words = getWords(str);
-	if (words == 0)
+	words = word_count(str);
+	sizes = malloc(words * sizeof(int));
+	if (sizes == NULL)
 		return (NULL);
-	s = malloc(sizeof(char *) * (words + 1));
-	if (s == NULL)
+	sizes = find_words_len(str, words);
+	nstr = malloc((words + 1) * sizeof(char *));
+	if (nstr == NULL)
 		return (NULL);
-	while (str[x])
+	i = j = k = 0;
+	while (i < words && str[j] != '\0')
 	{
-		if (str[x] != ' ')
+		cur_words = i;
+		nstr[i] = malloc(sizes[i] + sizeof(char));
+		if (nstr[i] == NULL)
 		{
-			int size = get_size_of_first(str + x);
-
-			s[filler] = malloc(sizeof(char) * (size + 1));
-			if (s[filler] == NULL)
+			for (i = i - 1; i >= 0; i--)
+				free(nstr[i--]);
+			free(nstr);
+			return (NULL);
+		}
+		while (str[j] != '\0' && i == cur_words)
+		{
+			if (str[j] != ' ')
 			{
-				int z;
-
-				for (z = 0; z < filler; z++)
+				while (str[j] != '\0' && str[j] != ' ')
 				{
-					free(s[z]);
+					nstr[i][k] = str[j]; j++; k++;
 				}
-				free(s);
-				return (NULL);
+				nstr[i][k] = '\0'; i++; k = 0;
 			}
-			fill(s[filler], str + x, size);
-			filler++;
-			x += size - 1;
+			j++;
 		}
-		x++;
 	}
-	s[words] = NULL;
-	return (s);
-}
-/**
- * getWords - get number of words in string
- * @s: string
- * Return: EXIT_SUCCESS.
- */
-int getWords(char *s)
-{
-	int x = 0, words = 0;
-
-	while (s[x])
-	{
-		if (x == 0 && s[x] != ' ')
-			words++;
-
-		if (s[x] == ' ' && s[x + 1] && s[x + 1] != ' ')
-		{
-			words++;
-		}
-		x++;
-	}
-	return (words);
-}
-/**
- * get_size_of_first - size of first word in string
- * @s: string
- * Return: size of word
- */
-int get_size_of_first(char *s)
-{
-	int x = 0;
-
-	while (s[x] && s[x] != ' ')
-		x++;
-	return (x);
-}
-/**
- * fill - fills s2 in s1
- * @s1: string1
- * @s2: string2
- * @size: size of s2
- * Return: void
- */
-void fill(char *s1, char *s2, int size)
-{
-	int x = 0;
-
-	while (x < size)
-	{
-		s1[x] = s2[x];
-		x++;
-	}
-	s1[size] = '\0';
+	nstr[i] = NULL;	free(sizes);
+	return (nstr);
 }
