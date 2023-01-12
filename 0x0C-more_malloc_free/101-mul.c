@@ -1,24 +1,24 @@
 #include "main.h"
 
 /**
- * _print - moves a string one place to the left and prints the string
+ * _print - a function that moves a string one place to the left
+ * and prints the string
  * @str: string to move
  * @l: size of string
- *
- * Return: void
+ * Return: Always 0.
  */
 void _print(char *str, int l)
 {
-	int i, j;
+	int x, y;
 
-	i = j = 0;
-	while (i < l)
+	x = y = 0;
+	while (x < l)
 	{
-		if (str[i] != '0')
-			j = 1;
-		if (j || i == l - 1)
-			_putchar(str[i]);
-		i++;
+		if (str[x] != '0')
+			y = 1;
+		if (y || x == l - 1)
+			_putchar(str[x]);
+		x++;
 	}
 
 	_putchar('\n');
@@ -26,33 +26,33 @@ void _print(char *str, int l)
 }
 
 /**
- * mul - multiplies a char with a string and places the answer into dest
+ * mul - a function that multiplies a char with a string
+ * and places the answer into dest
  * @n: char to multiply
  * @num: string to multiply
  * @num_index: last non NULL index of num
  * @dest: destination of multiplication
  * @dest_index: highest index to start addition
- *
- * Return: pointer to dest, or NULL on failure
+ * Return: Always 0.
  */
 char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 {
-	int j, k, mul, mulrem, add, addrem;
+	int y, z, mul, mulrem, add, addrem;
 
 	mulrem = addrem = 0;
-	for (j = num_index, k = dest_index; j >= 0; j--, k--)
+	for (y = num_index, z = dest_index; y >= 0; y--, z--)
 	{
-		mul = (n - '0') * (num[j] - '0') + mulrem;
+		mul = (n - '0') * (num[y] - '0') + mulrem;
 		mulrem = mul / 10;
-		add = (dest[k] - '0') + (mul % 10) + addrem;
+		add = (dest[z] - '0') + (mul % 10) + addrem;
 		addrem = add / 10;
-		dest[k] = add % 10 + '0';
+		dest[z] = add % 10 + '0';
 	}
-	for (addrem += mulrem; k >= 0 && addrem; k--)
+	for (addrem += mulrem; z >= 0 && addrem; z--)
 	{
-		add = (dest[k] - '0') + addrem;
+		add = (dest[z] - '0') + addrem;
 		addrem = add / 10;
-		dest[k] = add % 10 + '0';
+		dest[z] = add % 10 + '0';
 	}
 	if (addrem)
 	{
@@ -62,20 +62,20 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 }
 
 /**
- * check_for_digits - checks the arguments to ensure they are digits
+ * check_for_digits - a function that checks the arguments
+ * to ensure they are digits
  * @av: pointer to arguments
- *
- * Return: 0 if digits, 1 if not
+ * Return: Always 0.
  */
 int check_for_digits(char **av)
 {
-	int i, j;
+	int x, y;
 
-	for (i = 1; i < 3; i++)
+	for (x = 1; x < 3; x++)
 	{
-		for (j = 0; av[i][j]; j++)
+		for (y = 0; av[x][y]; y++)
 		{
-			if (av[i][j] < '0' || av[i][j] > '9')
+			if (av[x][y] < '0' || av[x][y] > '9')
 				return (1);
 		}
 	}
@@ -83,62 +83,60 @@ int check_for_digits(char **av)
 }
 
 /**
- * init - initializes a string
- * @str: sting to initialize
- * @l: length of strinf
- *
- * Return: void
+ * init - a function that initializes a string
+ * @str: string to initialize
+ * @l: length of string
+ * Return: Always 0.
  */
 void init(char *str, int l)
 {
-	int i;
+	int x;
 
-	for (i = 0; i < l; i++)
-		str[i] = '0';
-	str[i] = '\0';
+	for (x = 0; x < l; x++)
+		str[x] = '0';
+	str[x] = '\0';
 }
 
 /**
- * main - multiply two numbers
- * @argc: number of arguments
+ * main - a function that multiplies two numbers
+ * @argc: argument count
  * @argv: argument vector
- *
- * Return: zero, or exit status of 98 if failure
+ * Return: Always 0.
  */
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char **argv)
 {
-	int l1, l2, ln, ti, i;
+	int ln1, ln2, ln, ui, x;
 	char *a;
-	char *t;
+	char *u;
 	char e[] = "Error\n";
 
 	if (argc != 3 || check_for_digits(argv))
 	{
-		for (ti = 0; e[ti]; ti++)
-			_putchar(e[ti]);
+		for (ui = 0; e[ui]; ui++)
+			_putchar(e[ui]);
 		exit(98);
 	}
-	for (l1 = 0; argv[1][l1]; l1++)
+	for (ln1 = 0; argv[1][ln1]; ln1++)
 		;
-	for (l2 = 0; argv[2][l2]; l2++)
+	for (ln2 = 0; argv[2][l2]; ln2++)
 		;
-	ln = l1 + l2 + 1;
+	ln = ln1 + ln2 + 1;
 	a = malloc(ln * sizeof(char));
 	if (a == NULL)
 	{
-		for (ti = 0; e[ti]; ti++)
-			_putchar(e[ti]);
+		for (ui = 0; e[ui]; ui++)
+			_putchar(e[ui]);
 		exit(98);
 	}
 	init(a, ln - 1);
-	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
+	for (ui = l2 - 1, x = 0; ui >= 0; ui--, x++)
 	{
-		t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
-		if (t == NULL)
+		t = mul(argv[2][ui], argv[1], l1 - 1, a, (ln - 2) - x);
+		if (u == NULL)
 		{
-			for (ti = 0; e[ti]; ti++)
-				_putchar(e[ti]);
+			for (ui = 0; e[ui]; ui++)
+				_putchar(e[ui]);
 			free(a);
 			exit(98);
 		}
