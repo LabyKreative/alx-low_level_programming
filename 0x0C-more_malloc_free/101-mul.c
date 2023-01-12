@@ -119,7 +119,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	}
 	for (ln1 = 0; argv[1][ln1]; ln1++)
 		;
-	for (ln2 = 0; argv[2][l2]; ln2++)
+	for (ln2 = 0; argv[2][ln2]; ln2++)
 		;
 	ln = ln1 + ln2 + 1;
 	a = malloc(ln * sizeof(char));
@@ -130,9 +130,9 @@ int main(int argc __attribute__((unused)), char **argv)
 		exit(98);
 	}
 	init(a, ln - 1);
-	for (ui = l2 - 1, x = 0; ui >= 0; ui--, x++)
+	for (ui = ln2 - 1, x = 0; ui >= 0; ui--, x++)
 	{
-		t = mul(argv[2][ui], argv[1], l1 - 1, a, (ln - 2) - x);
+		u = mul(argv[2][ui], argv[1], ln1 - 1, a, (ln - 2) - x);
 		if (u == NULL)
 		{
 			for (ui = 0; e[ui]; ui++)
