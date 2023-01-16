@@ -2,26 +2,7 @@
 #include <stdlib.h>
 
 /**
- * *_strcpy - a function that copies the given string.
- * @dest: where to copy string to.
- * @src: string to copy.
- * Return: EXIT_SUCCESS.
- */
-char *_strcpy(char *dest, char *src)
-{
-	int x = 0;
-
-	while (*(src + x) != 0)
-	{
-		*(dest + x) = *(src + x);
-		x++;
-	}
-	*(dest + x) = '\0';
-	return (dest);
-}
-
-/**
- * new_dog - a function that creates a new dog struct.
+ * new_dog - a fucntion that creates a new dog.
  * @name: dog name.
  * @age: dog age.
  * @owner: dog owner.
@@ -29,41 +10,51 @@ char *_strcpy(char *dest, char *src)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	char *new_name;
-	char *new_owner;
-	int ln;
+	dog_t *pt;
 
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
+	char *n, *o;
+	int len_name = _strlen(name), len_owner = _strlen(owner), x;
+
+	pt = malloc(sizeof(dog_t));
+	if (!pt)
+		return (0);
+	n = malloc(sizeof(char) * (len_name + 1));
+	if (!n)
 	{
-		return (NULL);
+		free(n);
+		free(pt);
+		return (0);
 	}
-	ln = 0;
-	while (name[ln] != '\0')
-		ln++;
-	ln++;
-	new_name = malloc(ln * sizeof(*owner));
-	if (new_name == NULL)
+	o = malloc(sizeof(char) * (len_owner + 1));
+	if (!o)
 	{
-		free(new_dog);
-		return (NULL);
+		free(pt);
+		free(o);
+		free(n);
+		return (0);
 	}
-	ln = 0;
-	while (name[ln] != '\0')
-		ln++;
-	ln++;
-	new_owner = malloc(ln * sizeof(*name));
-	if (new_owner == NULL)
-	{
-		free(new_name);
-		free(new_dog);
-		return (NULL);
-	}
-	_strcpy(new_name, name);
-	_strcpy(new_owner, owner);
-	(*new_dog).name = new_name;
-	(*new_dog).age = age;
-	(*new_dog).owner = new_owner;
-	return (new_dog);
+	for (x = 0; x < len_name; x++)
+		n[x] = name[x];
+	n[x] = '\0';
+	for (x = 0; x < len_owner; x++)
+		o[x] = owner[x];
+	o[x] = '\0';
+	(*pt).name = n;
+	(*pt).age = age;
+	(*pt).owner = o;
+	return (pt);
+}
+
+/**
+ * _strlen - len of string
+ * @s: string
+ * Return: EXIT_SUCCESS.
+ */
+int _strlen(char *s)
+{
+	int counter = 0;
+
+	while (s[counter] != 0)
+		counter++;
+	return (counter);
 }
