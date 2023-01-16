@@ -7,7 +7,7 @@
  * Return: EXIT_SUCCESS.
  */
 
-int main(__attribute__((unused)))
+int main(void)
 {
 	printf("%s\n", __FILE__)
 		return (0);
