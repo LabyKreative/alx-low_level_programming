@@ -2,21 +2,21 @@
 #include <stdio.h>
 
 /**
- * print_opcodes - print the opcodes of this program
- * @a: address of the main function
- * @n: number of bytes to print
- *
- * Return: void
+ * print_opcodes - a function that prints the opcodes
+ * of this program.
+ * @a: main function address.
+ * @n: print number of bytes.
+ * Return: EXIT_SUCCESS.
  */
 
 void print_opcodes(char *a, int n)
 {
-	int i;
+	int x;
 
-	for (i = 0; i < n; i++)
+	for (x = 0; x < n; x++)
 	{
-		printf("%.2hhx", a[i]);
-		if (i < n - 1)
+		printf("%.2hhx", a[x]);
+		if (x < n - 1)
 			printf(" ");
 	}
 	printf("\n");
@@ -24,12 +24,13 @@ void print_opcodes(char *a, int n)
 }
 
 /**
- * main - prints the opcodes of its own main function
- * @argc: number of arguments passed to the function
- * @argv: array of pointers to arguments
- *
- * Return: always O
+ * main - a function that prints the opcodes
+ * of its own main function.
+ * @argc: arguments counts.
+ * @argv: arguments vector.
+ * Return: EXIT_SUCCESS.
  */
+
 int main(int argc, char **argv)
 {
 	int n;
