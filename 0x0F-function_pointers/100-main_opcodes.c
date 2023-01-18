@@ -11,7 +11,7 @@
 
 int main(int argc __attribute__((unused)), char **argv)
 {
-	unsigned char *ptr = (unsigned char *)main;
+	unsigned char *p = (unsigned char *)main;
 
 	unsigned int bytes;
 
@@ -32,7 +32,7 @@ int main(int argc __attribute__((unused)), char **argv)
 
 	for (x = 0; x < bytes; x++)
 	{
-		printf("%02x ", *ptr++);
+		printf("%02x ", *p++);
 	}
 	printf("\n");
 	return (0);
