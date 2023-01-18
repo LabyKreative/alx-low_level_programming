@@ -9,13 +9,13 @@
  * Return: EXIT_SUCCESS.
  */
 
-int main(int argc __attribute__((unused)), char **argv)
+int main(int argc, char *argv[])
 {
 	unsigned char *p = (unsigned char *)main;
 
 	unsigned int bytes;
 
-	int x;
+	int i;
 
 	if (argc != 2)
 	{
@@ -30,10 +30,8 @@ int main(int argc __attribute__((unused)), char **argv)
 
 	bytes = atoi(argv[1]);
 
-	for (x = 0; x < bytes; x++)
-	{
+	for (i = 0; i < bytes; i++)
 		printf("%02x ", *p++);
-	}
 	printf("\n");
 	return (0);
 }
