@@ -15,5 +15,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m);
 unsigned int _strlen(const char *str);
 unsigned int power(unsigned int base, unsigned int exp);
 int get_endianness(void);
+int get_endianness(void);
 
 #endif/* MAIN_H */
