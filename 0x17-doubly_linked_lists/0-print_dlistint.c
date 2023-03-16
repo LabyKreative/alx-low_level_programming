@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_dlistin - a function that prints all elements of a dlistsint_t list.
+ * print_dlistint - a function that prints all elements of a dlistsint_t list.
  * @h: list
  * Return: count
  */
