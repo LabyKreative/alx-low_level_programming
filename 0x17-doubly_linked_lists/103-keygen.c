@@ -1,9 +1,10 @@
 #include "lists.h"
 
 /**
- * main - Generates and prints passwords for the crackme5 executable.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - a function that generates and prints passwords
+ * for the crackme5 executable.
+ * @argc: num of arguments supplied to the program.
+ * @argv: array of pointers to the arguments.
  *
  * Return: Always 0.
  */
