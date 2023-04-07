@@ -9,27 +9,27 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *hash_table;
+	hash_table_t *ht;
 
 	if (size < 1)
 	{
 		return (NULL);
 	}
 
-	hash_table = malloc(sizeof(hash_table_t));
-	if (hash_table == NULL)
+	ht = malloc(sizeof(hash_table_t));
+	if (ht == NULL)
 	{
 		return (NULL);
 	}
 
-	hash_table->array = calloc(size, sizeof(hash_node_t *));
-	hash_table->size = size;
+	ht->array = calloc(size, sizeof(hash_node_t *));
+	ht->size = size;
 
-	if ((hash_table->array) == NULL)
+	if ((ht->array) == NULL)
 	{
-		free(hash_table);
+		free(ht);
 		return (NULL);
 	}
 
-	return (hash_table);
+	return (ht);
 }
