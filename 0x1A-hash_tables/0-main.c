@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for hash table.
+ * main - check the code for
  *
  * Return: Always EXIT_SUCCESS.
  */
