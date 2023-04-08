@@ -10,26 +10,18 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *ht;
-
-	if (size < 1)
-	{
-		return (NULL);
-	}
+	unsigned long int x;
 
 	ht = malloc(sizeof(hash_table_t));
 	if (ht == NULL)
-	{
 		return (NULL);
-	}
 
-	ht->array = calloc(size, sizeof(hash_node_t *));
 	ht->size = size;
-
-	if ((ht->array) == NULL)
-	{
-		free(ht);
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
 		return (NULL);
-	}
+	for (x = 0; x < size; x++)
+		ht->array[x] = NULL;
 
 	return (ht);
 }
