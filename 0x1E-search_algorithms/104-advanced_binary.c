@@ -59,5 +59,5 @@ int rec_search(int *array, size_t size, int value)
 		return (rec_search(array, bisect + 1, value));
 
 	bisect++;
-	return (rec_search(array + bisect, size - bisect, value) +bisect);
+	return (rec_search(array + bisect, size - bisect, value) + bisect);
 }
