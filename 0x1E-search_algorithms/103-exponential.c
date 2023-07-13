@@ -57,8 +57,8 @@ int _binary_search(int *array, size_t left, size_t right, int value)
 
 		x = left + (right - left) / 2;
 		if (array[x] == value)
-			return (i);
-		if (array[i] > value)
+			return (x);
+		if (array[x] > value)
 			right = x - 1;
 		else
 			left = x + 1;
