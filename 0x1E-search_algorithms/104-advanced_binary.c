@@ -25,7 +25,6 @@ int advanced_binary(int *array, size_t size, int value)
  * rec_search - a functiont that searches for a value in
  * an array of integers using the Binary search algorithm
  *
- *
  * @array: input array
  * @size: of the array
  * @value: to search in
