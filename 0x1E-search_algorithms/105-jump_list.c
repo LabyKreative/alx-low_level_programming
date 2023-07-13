@@ -23,7 +23,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	do {
 		prev = list;
-		k++;
+		x++;
 		index = x * y;
 
 		while (list->next && list->index < index)
