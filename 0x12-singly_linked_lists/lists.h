@@ -30,4 +30,4 @@ void free_list(list_t *head);
 list_t *get_last(list_t **head);
 list_t *get_last_node(list_t *head);
 
-#endif/*LISTS_H*/
+#endif /* LISTS_H */
